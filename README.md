@@ -1,62 +1,67 @@
 # ALEPHON
 
-ALEPHON is an open-source text encoder and decoder written in Python. It converts text into numerical sequences using a customizable character mapping.
+ALEPHON is an open-source text encoder and decoder written in Python.
 
-The project is intended for encoding and decoding text, **not for secure communication**.
+It transforms text into numerical sequences using prime numbers, square roots, and character positions. Randomized decimal precision and separator sequences make the encoded output less predictable in appearance. It is easy to decode when you have this reference though.
+
+**ALEPHON is an obfuscation project, not a secure encryption system.**
 
 ## Features
 
-- Encodes and decodes text through a terminal interface.
-- Supports the English alphabet (`A–Z`), spaces, and `. , ? !`.
-- Does not preserve capitalization.
-- Uses customizable numerical values for individual characters.
-- Requires no third-party Python packages.
+- Encode and decode text through a command-line interface.
+- Convert supported characters into numerical values using a predefined prime-number mapping.
+- Apply character-position-based mathematical transformations.
+- Randomize the precision of encoded numbers.
+- Insert randomly selected separators, including numbers and arbitrary words for poisoning your string.
+- Customize the character mappings and separator sequences. (Manually by changing the Source Code)
+- optional verbose output for nerds.
+
+## How It Works
+
+Each supported character is assigned a prime number.
+
+During encoding, ALEPHON calculates the square root of that prime number and multiplies the result by the character's position in the message. The resulting number is formatted with a randomly selected decimal precision and followed by a random separator.
+
+During decoding, ALEPHON removes the known separators and reverses the mathematical transformation to recover the original characters.
+
+The current version supports uppercase letters, spaces, and the punctuation marks `. , ? !`. Lowercase input is converted to uppercase.
+
+## Requirements
+
+- Python 3
+- No third-party dependencies
+
+ALEPHON uses only modules from the Python standard library.
 
 ## Usage
 
-Install Python 3, download the source code, and run the main Python script in your terminal:
+1. Download or clone the repository.
+2. Run the Python script.
+3. Select the encoder or decoder from the menu.
+4. Enter your text or an ALEPHON-encoded message.
 
-```bash
-python alephon.py
-```
+The program displays the result directly in the terminal.
 
-Select `1` to encode or `2` to decode, but generally just follow the prompts.
+## Customization
 
-## Output Randomization
+The following lists can be modified in the source code:
 
-ALEPHON varies the decimal precision of encoded characters and uses randomly selected four-digit separators.
+- `letterIndex` — Supported characters.
+- `numberIndex` — Corresponding prime-number values.
+- `breakCharacterIndex` — Possible separator sequences.
 
-Example of the output format:
+`letterIndex` and `numberIndex` must contain matching entries in the same order for encoding and decoding to work correctly.
 
-```text
-8.5432  →  8.54
-8.5432  →  8.543
-8.5432  →  8.5432
-```
+Messages encoded with modified mappings or separators may not be compatible with other configurations.
 
-The encoded values are then joined using numerical separators:
+## Security Notice
 
-```text
-8.54123412.3454326.7891111
-```
+ALEPHON is intended for experimentation, learning, and demonstrating Python programming.
 
-This introduces variation into the encoded output without changing the underlying character mappings.
+Although its output can be difficult to interpret visually, the mathematical transformation is reversible and does not provide cryptographic security.
 
-## Make your own version
+**Do not use ALEPHON to protect passwords, personal information, or other sensitive data.**
 
-ALEPHON is open source, so you can fork the repository and customize the character mappings. The values are stored in `numberIndex`, with each entry corresponding to the character at the same position in `letterIndex`.
+## License
 
-Keep the lists aligned and use distinct, positive numbers. Anyone exchanging encoded messages with your version must use compatible mappings and separators.
-
-## Security disclaimer
-
-ALEPHON uses a custom encoding method, **not established cryptography**. Its default mappings are public, and the encoding can be reverse-engineered. Access to your modified source code would also reveal your mappings.
-
-**Changing the values yourself does not guarantee security. Do not use ALEPHON to protect sensitive information.**
-
-## Known limitations
-
-- Certain encoded values may not decode correctly because of separator collisions or rounding.
-- Unsupported characters are skipped.
-- Original capitalization is not preserved.
-
+This project is distributed under the GNU General Public License v3.0 (GPL-3.0).
