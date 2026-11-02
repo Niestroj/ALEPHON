@@ -1,6 +1,6 @@
 # ALEPHON
 
-![ALEPHON Startup Screenshot](images/alephon0.png)
+![ALEPHON Startup Screenshot](images./alephon0.png)
 
 ALEPHON is an open-source text encoder and decoder written in Python.
 
@@ -32,8 +32,8 @@ For Example, the same string will most likely not have the same result if you ru
 
 It is a crude attempt at cryptography, but more of a proof of concept. It might just be the best obfuscation ever if you configure the 3 indexes in the Source Code in the right way.
 
-![ALEPHON Startup Screenshot](images/alephon1.png)
-![ALEPHON Startup Screenshot](images/alephon2.png)
+![ALEPHON Startup Screenshot](images./alephon1.png)
+![ALEPHON Startup Screenshot](images./alephon2.png)
 
 ## Requirements
 
