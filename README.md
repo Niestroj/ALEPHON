@@ -1,5 +1,7 @@
 # ALEPHON
 
+![ALEPHON Startup Screenshot](images/alephon0.png)
+
 ALEPHON is an open-source text encoder and decoder written in Python.
 
 It transforms text into numerical sequences using prime numbers, square roots, and character positions. Randomized decimal precision and separator sequences make the encoded output less predictable in appearance. It is easy to decode when you have this reference though.
@@ -25,6 +27,13 @@ During encoding, ALEPHON calculates the square root of that prime number and mul
 During decoding, ALEPHON removes the known separators and reverses the mathematical transformation to recover the original characters.
 
 The current version supports uppercase letters, spaces, and the punctuation marks `. , ? !`. Lowercase input is converted to uppercase.
+
+For Example, the same string will most likely not have the same result if you run it twice in a row, but they both decode to the original letter.
+
+It is a crude attempt at cryptography, but more of a proof of concept. It might just be the best obfuscation ever if you configure the 3 indexes in the Source Code in the right way.
+
+![ALEPHON Startup Screenshot](images/alephon1.png)
+![ALEPHON Startup Screenshot](images/alephon2.png)
 
 ## Requirements
 
