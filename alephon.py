@@ -16,15 +16,17 @@ letterIndex = [
     "I", "J", "K", "L", "M", "N", "O", "P",     # 8 - 15
     "Q", "R", "S", "T", "U", "V", "W", "X",     # 16 - 23
     "Y", "Z",                                   # 24, 25
-    ".", ",", "?", "!", " "                     # 26 - 30
-]                                               # In total, 0-30 aka 31 different letters. The numberIndex needs to match the length of this or the program will terminate.
+    ".", ",", "?", "!", " ",                    # 26 - 30
+    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+]                                               # In total, 0-30 aka 31 different letters + 10 numbers. The numberIndex needs to match the length of this or the program will terminate.
 numberIndex = [
     11, 13, 17, 19, 23, 29, 31, 37,
     41, 43, 47, 53, 59, 61, 67, 71,
     73, 79, 83, 89, 97, 101, 103, 107,
     109, 113,
-    127, 131, 137, 139, 149
-]                                               # Also 31 entries
+    127, 131, 137, 139, 149,
+    151, 157, 163, 167, 173, 179, 181, 191, 193, 197
+]                                               # SHOULD BE THE SAME LENGTH AS letterIndex.
 # This contains an assortment of unique sequences that should not be able to appear in maths. ill make them long, but this can at some point be the normal value of any part of the string.
 # the only way to mitigate this would be to use different characters, which would make the breaks between segments hilariously obvious.
 # So i'll take this tradeoff in definitive accuracy for a nicer looking "encryption"
@@ -38,7 +40,8 @@ breakCharacterIndex = [     # ADD AS MANY AS YOU WANT, MAKE THE DATA POISONED AS
     "WOW", "I_SEE", "APPLUM", "BANANUM", "STRAWBERRUM",
     "ATOMIC", "TUNGSTEN", "SECRET", "NINJA", "RICARDONIESTROJ",
     "die", "fuck", "marry", "kill", "cannabis", "THC", "MOLECULES",
-    "DATAPOINT", "HATE", "FLESH", "HAATE!"
+    "DATAPOINT", "HATE", "FLESH", "HAATE!", "I AM", "I AAM", "FEAR ME",
+    "CIA"
 ]
 ErrorState = False
 NT_COMMAND = "cls"
