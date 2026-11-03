@@ -2,7 +2,7 @@
 
 ![ALEPHON Startup Screenshot](images./alephon0.png)
 
-ALEPHON is an open-source text encoder and decoder written in Python.
+ALEPHON is a text encoder and decoder written in Python.
 
 It transforms text into numerical sequences using prime numbers, square roots, and character positions. Randomized decimal precision and separator sequences make the encoded output less predictable in appearance. It is easy to decode when you have this reference though.
 
